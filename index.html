@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>TELIP | EC-TEL 2026 Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <p class="site-tag" data-fill="header.tag"></p>
+        <div class="header-actions" data-fill="header.actions"></div>
+      </div>
+      <h1 class="site-title" data-fill="header.title"></h1>
+      <p class="site-subtitle" data-fill="header.subtitle"></p>
+      <ul class="meta-line" aria-label="Workshop logistics" data-fill="header.meta"></ul>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Page sections">
+    <div class="container nav-inner">
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#format">Format</a>
+      <a href="#cfp">CfP</a>
+      <a href="#dates">Dates</a>
+      <a href="#organisers">Organisers</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section id="about" class="section">
+      <div class="container">
+        <h2 data-fill="about.title"></h2>
+        <p class="lead" data-fill="about.lead"></p>
+        <p data-fill="about.conference"></p>
+
+        <h3 data-fill="about.audienceTitle"></h3>
+        <p data-fill="about.audience"></p>
+
+        <h3 data-fill="about.outcomesTitle"></h3>
+        <ul data-fill="about.outcomes"></ul>
+
+        <aside class="notice" id="survey">
+          <h3 data-fill="about.surveyTitle"></h3>
+          <p data-fill="about.survey"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="topics" class="section">
+      <div class="container">
+        <h2 data-fill="topics.title"></h2>
+        <div class="two-col">
+          <div>
+            <h3 data-fill="topics.topicsTitle"></h3>
+            <ul data-fill="topics.topics"></ul>
+          </div>
+          <div>
+            <h3 data-fill="topics.goalsTitle"></h3>
+            <ul data-fill="topics.goals"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="format" class="section">
+      <div class="container">
+        <h2 data-fill="format.title"></h2>
+        <p data-fill="format.intro"></p>
+        <ol class="steps" data-fill="format.steps"></ol>
+        <p class="muted" data-fill="format.note"></p>
+      </div>
+    </section>
+
+    <section id="cfp" class="section">
+      <div class="container">
+        <h2 data-fill="cfp.title"></h2>
+        <p class="lead" data-fill="cfp.lead"></p>
+
+        <ul class="placeholder-list" data-fill="cfp.items"></ul>
+
+        <p data-fill="cfp.note"></p>
+      </div>
+    </section>
+
+    <section id="dates" class="section">
+      <div class="container">
+        <h2 data-fill="dates.title"></h2>
+        <table class="dates-table">
+          <caption class="visually-hidden">Workshop and conference milestones</caption>
+          <thead>
+            <tr>
+              <th scope="col">Milestone</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody data-fill="dates.rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="organisers" class="section">
+      <div class="container">
+        <h2 data-fill="organisers.title"></h2>
+        <p class="muted" data-fill="organisers.note"></p>
+        <div class="table-wrap">
+          <table class="people-table">
+            <caption class="visually-hidden">Workshop organisers</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Affiliation</th>
+                <th scope="col">Contact</th>
+              </tr>
+            </thead>
+            <tbody data-fill="organisers.people"></tbody>
+          </table>
+        </div>
+        <p class="muted" data-fill="organisers.programmeCommittee"></p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 data-fill="contact.title"></h2>
+        <p data-fill="contact.enquiries"></p>
+        <p data-fill="contact.venue"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-fill="footer.line"></p>
+      <p class="muted" data-fill="footer.links"></p>
+    </div>
+  </footer>
+
+  <script src="content.js"></script>
+</body>
+</html>
