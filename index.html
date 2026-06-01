@@ -7,44 +7,48 @@
   <title>TELIP | EC-TEL 2026 Workshop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <nav class="site-nav" aria-label="Page sections">
+    <div class="container nav-inner">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#format">Format</a>
+        <a href="#cfp">Call for Participation</a>
+        <a href="#dates">Dates</a>
+        <a href="#organisers">Organisers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a
+        class="nav-external"
+        data-fill="header.navExternal"
+        href="https://ea-tel.eu/ectel2026"
+        target="_blank"
+        rel="noopener noreferrer"
+      >ECTEL 2026</a>
+    </div>
+  </nav>
+
   <header class="site-header">
     <div class="container">
-      <div class="header-top">
-        <p class="site-tag" data-fill="header.tag"></p>
-        <div class="header-actions" data-fill="header.actions"></div>
-      </div>
+      <p class="site-tag" data-fill="header.tag"></p>
       <h1 class="site-title" data-fill="header.title"></h1>
       <p class="site-subtitle" data-fill="header.subtitle"></p>
       <ul class="meta-line" aria-label="Workshop logistics" data-fill="header.meta"></ul>
     </div>
   </header>
 
-  <nav class="site-nav" aria-label="Page sections">
-    <div class="container nav-inner">
-      <a href="#about">About</a>
-      <a href="#topics">Topics</a>
-      <a href="#format">Format</a>
-      <a href="#cfp">CfP</a>
-      <a href="#dates">Dates</a>
-      <a href="#organisers">Organisers</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
   <main id="main">
     <section id="about" class="section">
       <div class="container">
         <h2 data-fill="about.title"></h2>
-        <p class="lead" data-fill="about.lead"></p>
-        <p data-fill="about.conference"></p>
+        <div class="about-intro" data-fill="about.lead"></div>
+        <p class="about-conference" data-fill="about.conference"></p>
 
         <h3 data-fill="about.audienceTitle"></h3>
         <p data-fill="about.audience"></p>
@@ -114,7 +118,6 @@
     <section id="organisers" class="section">
       <div class="container">
         <h2 data-fill="organisers.title"></h2>
-        <p class="muted" data-fill="organisers.note"></p>
         <div class="table-wrap">
           <table class="people-table">
             <caption class="visually-hidden">Workshop organisers</caption>
@@ -128,7 +131,6 @@
             <tbody data-fill="organisers.people"></tbody>
           </table>
         </div>
-        <p class="muted" data-fill="organisers.programmeCommittee"></p>
       </div>
     </section>
 
@@ -142,9 +144,25 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p data-fill="footer.line"></p>
-      <p class="muted" data-fill="footer.links"></p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name" data-fill="footer.brand"></p>
+        <p class="footer-tagline" data-fill="footer.tagline"></p>
+      </div>
+      <nav class="footer-nav" aria-label="Page sections">
+        <p class="footer-col-label">On this page</p>
+        <ul data-fill="footer.nav"></ul>
+      </nav>
+      <div class="footer-related">
+        <p class="footer-col-label">Related</p>
+        <ul class="footer-links" data-fill="footer.links"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p data-fill="footer.copyright"></p>
+        <a class="footer-top" href="#main">Back to top</a>
+      </div>
     </div>
   </footer>
 
