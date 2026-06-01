@@ -13,6 +13,39 @@
     });
   }
 
+  function fillLeadIntro(selector, value) {
+    if (value == null) return;
+    var blocks = Array.isArray(value) ? value : [value];
+    document.querySelectorAll(selector).forEach(function (el) {
+      el.innerHTML = blocks
+        .map(function (item, index) {
+          var title = null;
+          var text = '';
+          if (typeof item === 'string') {
+            text = item;
+          } else {
+            title = item.title;
+            text = item.text || '';
+          }
+          var titleHtml = title
+            ? '<h3>' + escapeHtml(title) + '</h3>'
+            : '';
+          var leadClass =
+            index === 0 && !title ? ' class="lead"' : '';
+          return (
+            '<div class="about-block">' +
+            titleHtml +
+            '<p' +
+            leadClass +
+            '>' +
+            escapeHtml(text) +
+            '</p></div>'
+          );
+        })
+        .join('');
+    });
+  }
+
   function fillList(selector, items, html) {
     var list = document.querySelector(selector);
     if (!list || !items) return;
@@ -34,30 +67,33 @@
   function fillMetaLine(items) {
     var list = document.querySelector('[data-fill="header.meta"]');
     if (!list || !items) return;
-    list.innerHTML = items.map(function (item) {
-      return '<li>' + escapeHtml(item) + '</li>';
-    }).join('');
-  }
-
-  function fillActions(actions) {
-    var container = document.querySelector('[data-fill="header.actions"]');
-    if (!container || !actions) return;
-    container.innerHTML = actions
-      .map(function (action) {
-        var attrs = action.external
-          ? ' target="_blank" rel="noopener noreferrer"'
+    list.innerHTML = items
+      .map(function (item) {
+        if (typeof item === 'string') {
+          return '<li class="meta-item">' + escapeHtml(item) + '</li>';
+        }
+        var kind = item.kind || 'default';
+        var label = item.label
+          ? '<span class="meta-label">' + escapeHtml(item.label) + '</span>'
           : '';
         return (
-          '<a href="' +
-          escapeHtml(action.href) +
-          '"' +
-          attrs +
-          '>' +
-          escapeHtml(action.label) +
-          '</a>'
+          '<li class="meta-item meta-' +
+          escapeHtml(kind) +
+          '">' +
+          label +
+          '<span class="meta-value">' +
+          escapeHtml(item.text) +
+          '</span></li>'
         );
       })
       .join('');
+  }
+
+  function fillNavExternal(link) {
+    var el = document.querySelector('[data-fill="header.navExternal"]');
+    if (!el || !link) return;
+    el.href = link.href;
+    el.textContent = link.label;
   }
 
   function fillCfpItems(items) {
@@ -127,13 +163,9 @@
     if (!tbody || !people) return;
     tbody.innerHTML = people
       .map(function (person) {
-        var badge = person.corresponding
-          ? ' <span class="badge" title="Corresponding organiser">✔</span>'
-          : '';
         return (
           '<tr><td>' +
           escapeHtml(person.name) +
-          badge +
           '</td><td>' +
           escapeHtml(person.affiliation) +
           '</td><td>' +
@@ -144,19 +176,20 @@
       .join('');
   }
 
-  function fillFooterLinks(links) {
-    var container = document.querySelector('[data-fill="footer.links"]');
+  function fillFooterList(selector, links, external) {
+    var container = document.querySelector(selector);
     if (!container || !links) return;
     container.innerHTML = links
-      .map(function (link, index) {
-        var prefix = index > 0 ? ' · ' : '';
+      .map(function (link) {
+        var attrs = external ? ' target="_blank" rel="noopener noreferrer"' : '';
         return (
-          prefix +
-          '<a href="' +
+          '<li><a href="' +
           escapeHtml(link.href) +
-          '">' +
+          '"' +
+          attrs +
+          '>' +
           escapeHtml(link.label) +
-          '</a>'
+          '</a></li>'
         );
       })
       .join('');
@@ -171,10 +204,10 @@
     fillText('[data-fill="header.title"]', content.header.title);
     fillText('[data-fill="header.subtitle"]', content.header.subtitle);
     fillMetaLine(content.header.meta);
-    fillActions(content.header.actions);
+    fillNavExternal(content.header.navExternal);
 
     fillText('[data-fill="about.title"]', content.about.title);
-    fillText('[data-fill="about.lead"]', content.about.lead);
+    fillLeadIntro('[data-fill="about.lead"]', content.about.lead);
     fillHtml('[data-fill="about.conference"]', content.about.conference);
     fillText('[data-fill="about.audienceTitle"]', content.about.audienceTitle);
     fillHtml('[data-fill="about.audience"]', content.about.audience);
@@ -203,18 +236,54 @@
     fillDates(content.dates.rows);
 
     fillText('[data-fill="organisers.title"]', content.organisers.title);
-    fillText('[data-fill="organisers.note"]', content.organisers.note);
     fillOrganisers(content.organisers.people);
-    fillHtml('[data-fill="organisers.programmeCommittee"]', content.organisers.programmeCommittee);
 
     fillText('[data-fill="contact.title"]', content.contact.title);
     fillHtml('[data-fill="contact.enquiries"]', content.contact.enquiries);
     fillHtml('[data-fill="contact.venue"]', content.contact.venue);
 
-    fillText('[data-fill="footer.line"]', content.footer.line);
-    fillFooterLinks(content.footer.links);
+    fillText('[data-fill="footer.brand"]', content.footer.brand);
+    fillText('[data-fill="footer.tagline"]', content.footer.tagline);
+    fillText('[data-fill="footer.copyright"]', content.footer.copyright);
+    fillFooterList('[data-fill="footer.nav"]', content.footer.nav);
+    fillFooterList('[data-fill="footer.links"]', content.footer.links, true);
 
     document.documentElement.classList.add('content-loaded');
+    setupNavHighlight();
+  }
+
+  function setupNavHighlight() {
+    var navLinks = Array.prototype.slice.call(
+      document.querySelectorAll('.site-nav .nav-links a[href^="#"]')
+    );
+    var sections = navLinks
+      .map(function (link) {
+        var id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    function updateActiveNav() {
+      var offset = 100;
+      var scrollY = window.scrollY + offset;
+      var current = sections[0];
+
+      sections.forEach(function (section) {
+        if (section.offsetTop <= scrollY) current = section;
+      });
+
+      navLinks.forEach(function (link) {
+        link.classList.toggle(
+          'is-active',
+          link.getAttribute('href') === '#' + current.id
+        );
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
   }
 
   fetch('content.json')
