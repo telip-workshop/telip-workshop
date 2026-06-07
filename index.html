@@ -15,28 +15,51 @@
 
   <nav class="site-nav" aria-label="Page sections">
     <div class="container nav-inner">
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#topics">Topics</a>
-        <a href="#format">Format</a>
-        <a href="#cfp">Call for Participation</a>
-        <a href="#dates">Dates</a>
-        <a href="#organisers">Organisers</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a class="nav-brand site-logo" href="#main" aria-label="TELIP — back to top">
+        <span class="site-logo-lockup">
+          <span class="site-logo-mark" aria-hidden="true"></span>
+          <span class="site-logo-text">
+            <span class="site-logo-name">TELIP</span>
+            <span class="site-logo-tagline">EC-TEL 2026 Workshop</span>
+          </span>
+        </span>
+      </a>
       <a
-        class="nav-external"
+        class="nav-external nav-conference-logo conference-logo"
         data-fill="header.navExternal"
         href="https://ea-tel.eu/ectel2026"
         target="_blank"
         rel="noopener noreferrer"
-      >ECTEL 2026</a>
+      >
+        <img
+          src="img/ectel_logo2.png"
+          alt="EC-TEL 2026"
+          width="702"
+          height="316"
+          decoding="async"
+        >
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav-menu"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </span>
+      </button>
+      <div class="nav-menu" id="site-nav-menu">
+        <div class="nav-links" data-fill="navigation"></div>
+      </div>
     </div>
   </nav>
 
   <header class="site-header">
     <div class="container">
-      <p class="site-tag" data-fill="header.tag"></p>
       <h1 class="site-title" data-fill="header.title"></h1>
       <p class="site-subtitle" data-fill="header.subtitle"></p>
       <ul class="meta-line" aria-label="Workshop logistics" data-fill="header.meta"></ul>
@@ -47,89 +70,52 @@
     <section id="about" class="section">
       <div class="container">
         <h2 data-fill="about.title"></h2>
-        <div class="about-intro" data-fill="about.lead"></div>
-        <p class="about-conference" data-fill="about.conference"></p>
 
-        <h3 data-fill="about.audienceTitle"></h3>
-        <p data-fill="about.audience"></p>
+        <div class="about-faq" data-fill="about.faq"></div>
 
-        <h3 data-fill="about.outcomesTitle"></h3>
-        <ul data-fill="about.outcomes"></ul>
+        <aside class="survey-cta" id="survey" data-fill="about.survey"></aside>
 
-        <aside class="notice" id="survey">
-          <h3 data-fill="about.surveyTitle"></h3>
-          <p data-fill="about.survey"></p>
-        </aside>
+        <div class="about-description" data-fill="about.description"></div>
       </div>
     </section>
 
-    <section id="topics" class="section">
+    <section id="goals" class="section">
       <div class="container">
-        <h2 data-fill="topics.title"></h2>
-        <div class="two-col">
-          <div>
-            <h3 data-fill="topics.topicsTitle"></h3>
-            <ul data-fill="topics.topics"></ul>
-          </div>
-          <div>
-            <h3 data-fill="topics.goalsTitle"></h3>
-            <ul data-fill="topics.goals"></ul>
-          </div>
+        <h2 data-fill="goals.title"></h2>
+        <div class="goals-body">
+          <p class="section-intro" data-fill="goals.intro"></p>
+          <ul class="goals-questions" data-fill="goals.exampleQuestions"></ul>
         </div>
       </div>
     </section>
 
-    <section id="format" class="section">
+    <section id="participation" class="section">
       <div class="container">
-        <h2 data-fill="format.title"></h2>
-        <p data-fill="format.intro"></p>
-        <ol class="steps" data-fill="format.steps"></ol>
-        <p class="muted" data-fill="format.note"></p>
+        <h2 data-fill="participation.title"></h2>
+        <p class="section-intro" data-fill="participation.intro"></p>
+
+        <h3 data-fill="participation.formatTitle"></h3>
+        <p class="panel-intro" data-fill="participation.formatIntro"></p>
+        <ol class="agenda-steps item-list" data-fill="participation.formatSteps"></ol>
       </div>
     </section>
 
-    <section id="cfp" class="section">
+    <section id="outcomes" class="section">
       <div class="container">
-        <h2 data-fill="cfp.title"></h2>
-        <p class="lead" data-fill="cfp.lead"></p>
-
-        <ul class="placeholder-list" data-fill="cfp.items"></ul>
-
-        <p data-fill="cfp.note"></p>
-      </div>
-    </section>
-
-    <section id="dates" class="section">
-      <div class="container">
-        <h2 data-fill="dates.title"></h2>
-        <table class="dates-table">
-          <caption class="visually-hidden">Workshop and conference milestones</caption>
-          <thead>
-            <tr>
-              <th scope="col">Milestone</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody data-fill="dates.rows"></tbody>
-        </table>
+        <h2 data-fill="outcomes.title"></h2>
+        <p class="section-intro" data-fill="outcomes.intro"></p>
+        <div class="outcomes-grid" data-fill="outcomes.items"></div>
       </div>
     </section>
 
     <section id="organisers" class="section">
       <div class="container">
         <h2 data-fill="organisers.title"></h2>
-        <div class="table-wrap">
-          <table class="people-table">
-            <caption class="visually-hidden">Workshop organisers</caption>
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Affiliation</th>
-                <th scope="col">Contact</th>
-              </tr>
-            </thead>
-            <tbody data-fill="organisers.people"></tbody>
-          </table>
+        <div class="organiser-grid" data-fill="organisers.people" role="list"></div>
+
+        <div class="affiliations-block">
+          <h2 data-fill="organisers.affiliationsTitle"></h2>
+          <ul class="affiliation-logos" data-fill="organisers.affiliations"></ul>
         </div>
       </div>
     </section>
@@ -137,8 +123,7 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 data-fill="contact.title"></h2>
-        <p data-fill="contact.enquiries"></p>
-        <p data-fill="contact.venue"></p>
+        <p class="section-intro" data-fill="contact.enquiries"></p>
       </div>
     </section>
   </main>
@@ -146,12 +131,36 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <p class="footer-name" data-fill="footer.brand"></p>
+        <a class="footer-logo site-logo site-logo--footer" href="#main" aria-label="TELIP — back to top">
+          <span class="site-logo-lockup">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span class="site-logo-text">
+              <span class="site-logo-name" data-fill="footer.brand">TELIP</span>
+              <span class="site-logo-tagline">EC-TEL 2026 Workshop</span>
+            </span>
+          </span>
+        </a>
+        <a
+          class="footer-conference-logo conference-logo"
+          data-fill="footer.conferenceLogo"
+          href="https://ea-tel.eu/ectel2026"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="img/ectel_logo2.png"
+            alt="EC-TEL 2026"
+            width="702"
+            height="316"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
         <p class="footer-tagline" data-fill="footer.tagline"></p>
       </div>
       <nav class="footer-nav" aria-label="Page sections">
         <p class="footer-col-label">On this page</p>
-        <ul data-fill="footer.nav"></ul>
+        <ul data-fill="navigation"></ul>
       </nav>
       <div class="footer-related">
         <p class="footer-col-label">Related</p>
