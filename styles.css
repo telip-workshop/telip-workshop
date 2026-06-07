@@ -339,77 +339,16 @@ a {
 
 .nav-brand {
   order: 1;
-  flex-shrink: 0;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
   text-decoration: none;
 }
 
 .nav-brand:hover {
-  opacity: 0.88;
-}
-
-/* Text logo — typographic lockup aligned with site fonts */
-.site-logo {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-logo-lockup {
-  display: flex;
-  align-items: stretch;
-  gap: 0.55rem;
-}
-
-.site-logo-mark {
-  flex-shrink: 0;
-  width: 3px;
-  border-radius: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--accent-light) 0%,
-    var(--accent) 100%
-  );
-}
-
-.site-logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.15rem;
-}
-
-.site-logo-name {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  color: var(--accent);
-}
-
-.site-logo-tagline {
-  font-family: var(--font-sans);
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.site-logo--footer .site-logo-name {
-  font-size: 1.3125rem;
-}
-
-.site-logo--footer .site-logo-tagline {
-  font-size: 0.6875rem;
-}
-
-.site-logo--footer .site-logo-mark {
-  width: 3.5px;
-}
-
-.footer-logo {
-  display: inline-block;
+  opacity: 0.85;
 }
 
 .site-nav .nav-conference-logo {
@@ -439,13 +378,12 @@ a {
   }
 
   .nav-brand {
-    order: 0;
-    margin-right: 0.5rem;
+    display: none;
   }
 
   .site-nav .nav-conference-logo {
     display: inline-flex;
-    order: 3;
+    order: 2;
     margin-left: auto;
   }
 
@@ -1502,6 +1440,15 @@ li + li {
   gap: 0.75rem;
 }
 
+.footer-name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1.2;
+}
 
 .footer-tagline {
   margin: 0;
