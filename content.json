@@ -60,10 +60,9 @@
       "title": "Share your perspective before we meet",
       "text": "Participate in a survey to help us establish a shared understanding of iPBL, its characteristics, key theoretical concepts, and the research interests of the EC-TEL community. Your input helps form subgroups and grounds the case-based discussions.",
       "link": {
-        "href": "",
+        "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en",
         "label": "Complete the pre-workshop survey"
-      },
-      "note": "Survey link coming soon · July–August 2026"
+      }
     },
     "description": {
       "title": "Background and Motivation",
