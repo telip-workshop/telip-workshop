@@ -27,7 +27,7 @@
   --max: clamp(40rem, 78vw, 68rem);
   --space: clamp(3.25rem, 8vw, 5.5rem);
   --font-sans: "Source Sans 3", system-ui, -apple-system, sans-serif;
-  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-display: "Outfit", system-ui, -apple-system, sans-serif;
   font-synthesis: none;
 }
 
@@ -182,10 +182,10 @@ a {
 
 .site-title {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(2.75rem, 10vw, 3.75rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  letter-spacing: -0.035em;
   line-height: 1;
   color: var(--text);
 }
@@ -199,6 +199,7 @@ a {
   color: var(--muted);
   max-width: none;
   text-wrap: pretty;
+  white-space: pre-line;
 }
 
 .meta-line {
@@ -339,9 +340,9 @@ a {
 
 .nav-brand {
   order: 1;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--accent);
   text-decoration: none;
@@ -368,11 +369,18 @@ a {
     display: none;
   }
 
+  .nav-inner {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+  }
+
   .nav-menu {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
     flex-basis: auto;
     order: 1;
+    min-width: 0;
     padding: 0;
     border-top: none;
   }
@@ -385,6 +393,7 @@ a {
     display: inline-flex;
     order: 2;
     margin-left: auto;
+    align-self: center;
   }
 
   .nav-links {
@@ -404,7 +413,15 @@ a {
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .site-nav .nav-links a {
+    font-size: 0.6875rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: var(--radius-full);
+  }
+}
+
+@media (min-width: 64rem) {
   .site-nav .nav-links a {
     font-size: 0.75rem;
     padding: 0.4rem 0.6rem;
@@ -498,7 +515,19 @@ a {
   max-height: none;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .nav-conference-logo img {
+    width: 7.5rem;
+  }
+}
+
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .nav-conference-logo img {
+    width: 9rem;
+  }
+}
+
+@media (min-width: 80rem) {
   .nav-conference-logo img {
     width: 11rem;
   }
@@ -531,7 +560,7 @@ main > .section:nth-child(even) {
 
 h2 {
   margin: 0 0 1.75rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.625rem, 4vw, 2.125rem);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -556,9 +585,10 @@ h2::after {
 
 h3 {
   margin: 0 0 0.75rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.1875rem;
   font-weight: 600;
+  letter-spacing: -0.015em;
   line-height: 1.3;
   color: var(--text);
 }
@@ -572,13 +602,13 @@ h3 {
   color: var(--text);
 }
 
-@media (min-width: 40rem) {
-  #about .about-faq__answer,
+@media (min-width: 48rem) {
   #about .about-description p,
   .section-intro,
   #participation .panel-intro {
     text-align: justify;
     hyphens: auto;
+    text-wrap: pretty;
   }
 }
 
@@ -673,13 +703,14 @@ h3 {
   font-size: 0.9375rem;
   line-height: 1.58;
   color: var(--text);
+  text-wrap: pretty;
 }
 
 .about-faq__answer p {
   margin: 0;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 56rem) {
   .about-faq__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
@@ -728,7 +759,7 @@ h3 {
 
 .survey-cta__title {
   margin: 0 0 0.75rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.25rem, 3vw, 1.625rem);
   font-weight: 600;
   line-height: 1.25;
@@ -801,7 +832,7 @@ h3 {
 
 .about-description__title {
   margin: 0 0 1rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--accent);
@@ -1442,7 +1473,7 @@ li + li {
 
 .footer-name {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.02em;

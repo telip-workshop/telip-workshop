@@ -5,7 +5,7 @@
   },
   "header": {
     "title": "Technology Enhanced Learning for Interdisciplinary Project-based learning (TELIP)",
-    "subtitle": "TEL for Interdisciplinary Project-based Learning in Higher Education and the Workplace: A Research Agenda for the Next Decade",
+    "subtitle": "TEL for Interdisciplinary Project-based Learning in Higher Education and the Workplace:\nA Research Agenda for the Next Decade",
     "meta": [
       {
         "kind": "format",
@@ -42,12 +42,12 @@
       {
         "question": "What is the aim of this workshop?",
         "icon": "aim",
-        "answer": "The workshop aims to develop a shared research agenda for technology-enhanced learning (TEL) that can effectively support iPBL in higher education and at the workplace over the next decade, building on empirical insights, theoretical perspectives, and practitioner experiences."
+        "answer": "This workshop aims to develop a shared research agenda for TEL that can effectively support iPBL over the next decade by identifying key challenges related to team development through empirical insights, theoretical perspectives, and practitioner experiences."
       },
       {
         "question": "What happens during the workshop?",
         "icon": "format",
-        "answer": "It combines case-based discussions with collaborative agenda building: presentation of selected cases and TEL innovations; identification of challenges; definition of a research agenda in subgroups; and presentation of outcomes by groups, to outline a shared research agenda. "
+        "answer": "It combines case-based discussions with collaborative agenda building: presentation of selected cases and TEL innovations; identification of challenges; definition of a research agenda in subgroups; and presentation of outcomes by groups followed by voting in plenum and specification of concrete follow up activities. "
       },
       {
         "question": "Who should attend?",
@@ -65,10 +65,9 @@
       }
     },
     "description": {
-      "title": "Background and Motivation",
+      "title": "Motivation",
       "paragraphs": [
-        "Interdisciplinary project-based learning (iPBL) in higher education and the workplace places increasing demands on technology-enhanced learning (TEL) to support temporarily formed teams that collaborate across disciplinary and professional boundaries, especially when there is only partial or missing human facilitation.",
-        "However, existing TEL research remains fragmented, often addressing isolated phases or outcomes of projects while overlooking the longitudinal dynamics of team development, learning, and collaboration. This workshop is motivated by the need to systematically explore the challenges ahead for TEL research in supporting iPBL across contexts, with a particular focus on how interdisciplinary and interprofessional teams evolve over time. By integrating scattered research on project-based teams from both higher education and workplace settings, the workshop aims to connect research communities that currently operate largely in parallel. Bringing together diverse theoretical perspectives and methodological approaches, the workshop seeks to foster mutual inspiration, shared understanding, and future collaboration toward a more coherent and impactful TEL research agenda on iPBL."
+        "Interdisciplinary project-based learning (iPBL) in higher education and the workplace places increasing demands on technology-enhanced learning (TEL) to support temporarily formed teams that collaborate across disciplinary and professional boundaries, especially when there is only partial or missing human facilitation. However, existing TEL research remains fragmented, often addressing isolated phases or outcomes of projects while overlooking the longitudinal dynamics of team development, learning, and collaboration. This workshop is motivated by the need to systematically explore the challenges ahead for TEL research in supporting iPBL across contexts, with a particular focus on how interdisciplinary and interprofessional teams evolve over time. By integrating scattered research on project-based teams from both higher education and workplace settings, the workshop aims to connect research communities that currently operate largely in parallel. Bringing together diverse theoretical perspectives and methodological approaches, the workshop seeks to foster mutual inspiration, shared understanding, and future collaboration toward a more coherent and impactful TEL research agenda on iPBL."
       ]
     }
   },
@@ -91,7 +90,7 @@
     "formatIntro": "The workshop runs in hybrid form and is organized in four parts:",
     "formatSteps": [
       "<strong>Case presentations</strong>: Presentation of selected cases and TEL innovations for iPBL from higher education and workplace contexts.",
-      "<strong>Challenge identification</strong>: Identification of challenges with all participants, including clarification of (dis)similarities between application domains.",
+      "<strong>Challenge identification</strong>: Identification of challenges with all participants across application domains.",
       "<strong>Research agenda formulation</strong>: Definition of a research agenda by formulating research questions and projects in subgroups with online and offline breakout rooms.",
       "<strong>Synthesis &amp; follow-up</strong>: Presentation of outcomes by groups followed by voting in plenum and specification of concrete follow up activities."
     ]
