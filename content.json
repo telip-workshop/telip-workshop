@@ -21,6 +21,19 @@
         "kind": "location",
         "label": "Location",
         "text": "Valencia, Spain"
+      },
+      {
+        "kind": "actions",
+        "items": [
+          {
+            "label": "Pre-workshop survey",
+            "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en"
+          },
+          {
+            "label": "Conference registration",
+            "href": "https://ea-tel.eu/ectel2026/registration"
+          }
+        ]
       }
     ],
     "navExternal": {
@@ -37,7 +50,7 @@
       {
         "question": "What is TELIP?",
         "icon": "what",
-        "answer": "<strong>TELIP</strong> (Technology Enhanced Learning for Interdisciplinary Project-based learning) is a hybrid EC-TEL 2026 workshop. It focuses on how technology can support interdisciplinary project-based learning (iPBL) in higher education and at the workplace, and invites participants to share and discuss perspectives on iPBL. "
+        "answer": "TELIP (Technology Enhanced Learning for Interdisciplinary Project-based learning) is a hybrid EC-TEL 2026 workshop. It focuses on how technology can support interdisciplinary project-based learning (iPBL) in higher education and at the workplace, and invites participants to share and discuss perspectives on iPBL. "
       },
       {
         "question": "What is the aim of this workshop?",
@@ -47,12 +60,12 @@
       {
         "question": "What happens during the workshop?",
         "icon": "format",
-        "answer": "It combines case-based discussions with collaborative agenda building: presentation of selected cases and TEL innovations; identification of challenges; definition of a research agenda in subgroups; and presentation of outcomes by groups followed by voting in plenum and specification of concrete follow up activities. "
+        "answer": "The workshop has four parts: presentation of selected cases and TEL innovations; identification of challenges; definition of a research agenda in subgroups; and presentation of outcomes by groups followed by voting in plenum and specification of concrete follow up activities."
       },
       {
         "question": "Who should attend?",
         "icon": "who",
-        "answer": "<strong>Researchers</strong> (e.g., CSCL/CSCW, boundary crossing/work, learning analytics, AI) and <strong>practitioners</strong> (e.g., managers/administrators, teachers/consultants, coaches/facilitators) in the realm of iPBL in higher education and at the workplace."
+        "answer": "Researchers (e.g., CSCL/CSCW, boundary crossing/work, learning analytics, AI) and practitioners (e.g., managers/administrators, teachers/consultants, coaches/facilitators) in the realm of iPBL in higher education and at the workplace."
       }
     ],
     "survey": {

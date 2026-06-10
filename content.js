@@ -212,6 +212,26 @@
           return '<li class="meta-item">' + escapeHtml(item) + '</li>';
         }
         var kind = item.kind || 'default';
+        if (kind === 'actions' && item.items && item.items.length) {
+          return (
+            '<li class="meta-item meta-actions" role="presentation">' +
+            '<div class="meta-actions__group" role="group" aria-label="Quick links">' +
+            item.items
+              .map(function (action) {
+                var href = action.href && action.href.trim();
+                if (!href || !action.label) return '';
+                return (
+                  '<a class="meta-btn" href="' +
+                  escapeHtml(href) +
+                  '" target="_blank" rel="noopener noreferrer">' +
+                  escapeHtml(action.label) +
+                  '</a>'
+                );
+              })
+              .join('') +
+            '</div></li>'
+          );
+        }
         var label = item.label
           ? '<span class="meta-label">' + escapeHtml(item.label) + '</span>'
           : '';
