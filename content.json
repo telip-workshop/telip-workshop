@@ -30,7 +30,7 @@
             "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en"
           },
           {
-            "label": "Conference registration",
+            "label": "EC-TEL 2026 registration",
             "href": "https://ea-tel.eu/ectel2026/registration"
           }
         ]
@@ -75,6 +75,10 @@
       "link": {
         "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en",
         "label": "Complete the pre-workshop survey"
+      },
+      "registrationLink": {
+        "href": "https://ea-tel.eu/ectel2026/registration",
+        "label": "Register for EC-TEL 2026"
       }
     },
     "description": {
@@ -289,6 +293,10 @@
     {
       "label": "About",
       "href": "#about"
+    },
+    {
+      "label": "Motivation",
+      "href": "#motivation"
     },
     {
       "label": "Workshop goals",

@@ -54,26 +54,41 @@
     });
   }
 
+  function buildSurveyCtaLink(link, variant) {
+    if (!link || !link.label) return '';
+    var href = link.href && link.href.trim();
+    var className = 'survey-cta__link';
+    if (variant === 'outline') className += ' survey-cta__link--outline';
+    if (href) {
+      return (
+        '<a class="' +
+        className +
+        '" href="' +
+        escapeHtml(href) +
+        '" target="_blank" rel="noopener noreferrer">' +
+        escapeHtml(link.label) +
+        '<span class="survey-cta__arrow" aria-hidden="true">→</span></a>'
+      );
+    }
+    return (
+      '<span class="' +
+      className +
+      ' survey-cta__link--disabled">' +
+      escapeHtml(link.label) +
+      '</span>'
+    );
+  }
+
   function fillAboutSurvey(selector, survey) {
     if (!survey) return;
     document.querySelectorAll(selector).forEach(function (el) {
-      var href = survey.link && (survey.link.href || '').trim();
-      var linkHtml = '';
-      if (survey.link && survey.link.label) {
-        if (href) {
-          linkHtml =
-            '<a class="survey-cta__link" href="' +
-            escapeHtml(href) +
-            '" target="_blank" rel="noopener noreferrer">' +
-            escapeHtml(survey.link.label) +
-            '<span class="survey-cta__arrow" aria-hidden="true">→</span></a>';
-        } else {
-          linkHtml =
-            '<span class="survey-cta__link survey-cta__link--disabled">' +
-            escapeHtml(survey.link.label) +
-            '</span>';
-        }
-      }
+      var actionLinks = [
+        buildSurveyCtaLink(survey.link, 'primary'),
+        buildSurveyCtaLink(survey.registrationLink, 'outline')
+      ].filter(Boolean);
+      var actionsHtml = actionLinks.length
+        ? '<div class="survey-cta__actions">' + actionLinks.join('') + '</div>'
+        : '';
       var noteHtml = survey.note
         ? '<p class="survey-cta__note">' + escapeHtml(survey.note) + '</p>'
         : '';
@@ -92,7 +107,7 @@
         noteHtml +
         '</div>' +
         '<div class="survey-cta__action">' +
-        linkHtml +
+        actionsHtml +
         '</div></div>';
     });
   }
@@ -102,9 +117,7 @@
     var paragraphs = description.paragraphs || [];
     document.querySelectorAll(selector).forEach(function (el) {
       var titleHtml = description.title
-        ? '<h3 class="about-description__title">' +
-          escapeHtml(description.title) +
-          '</h3>'
+        ? '<h2 id="motivation">' + escapeHtml(description.title) + '</h2>'
         : '';
       var bodyHtml = paragraphs
         .map(function (text) {

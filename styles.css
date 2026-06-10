@@ -840,6 +840,19 @@ h3 {
   flex-shrink: 0;
 }
 
+.survey-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+@media (min-width: 48rem) {
+  .survey-cta__actions {
+    align-items: flex-end;
+  }
+}
+
 .survey-cta__link {
   display: inline-flex;
   align-items: center;
@@ -882,17 +895,25 @@ h3 {
   box-shadow: none;
 }
 
+.survey-cta__link--outline {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgb(255 255 255 / 0.85);
+  box-shadow: none;
+}
+
+.survey-cta__link--outline:hover {
+  background: rgb(255 255 255 / 0.12);
+  box-shadow: none;
+}
+
 /* Description — plain prose */
 .about-description {
   margin: 0 0 clamp(2.25rem, 5vw, 3rem);
 }
 
-.about-description__title {
-  margin: 0 0 1rem;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent);
+.about-description h2 {
+  margin-bottom: 1rem;
 }
 
 .about-description p {
