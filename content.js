@@ -58,7 +58,7 @@
     if (!link || !link.label) return '';
     var href = link.href && link.href.trim();
     var className = 'survey-cta__link';
-    if (variant === 'outline') className += ' survey-cta__link--outline';
+    if (variant === 'primary') className += ' survey-cta__link--primary';
     if (href) {
       return (
         '<a class="' +
@@ -82,10 +82,7 @@
   function fillAboutSurvey(selector, survey) {
     if (!survey) return;
     document.querySelectorAll(selector).forEach(function (el) {
-      var actionLinks = [
-        buildSurveyCtaLink(survey.link, 'primary'),
-        buildSurveyCtaLink(survey.registrationLink, 'outline')
-      ].filter(Boolean);
+      var actionLinks = [buildSurveyCtaLink(survey.link, 'primary')].filter(Boolean);
       var actionsHtml = actionLinks.length
         ? '<div class="survey-cta__actions">' + actionLinks.join('') + '</div>'
         : '';
@@ -233,8 +230,12 @@
               .map(function (action) {
                 var href = action.href && action.href.trim();
                 if (!href || !action.label) return '';
+                var btnClass = 'meta-btn';
+                if (action.variant === 'primary') btnClass += ' meta-btn--primary';
                 return (
-                  '<a class="meta-btn" href="' +
+                  '<a class="' +
+                  btnClass +
+                  '" href="' +
                   escapeHtml(href) +
                   '" target="_blank" rel="noopener noreferrer">' +
                   escapeHtml(action.label) +

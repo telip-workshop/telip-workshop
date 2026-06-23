@@ -309,6 +309,24 @@ a {
   color: #fff;
 }
 
+.meta-btn--primary {
+  padding: 0.6875rem 1.25rem;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.meta-btn--primary:hover {
+  background: #1a4080;
+  border-color: #1a4080;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Nav */
 .site-nav {
   position: sticky;
@@ -871,10 +889,33 @@ h3 {
     box-shadow 0.2s var(--ease);
 }
 
+.survey-cta__link--primary {
+  padding: 0.875rem 1.625rem;
+  background: #fff;
+  color: var(--accent) !important;
+  font-size: 1.03125rem;
+  font-weight: 700;
+  box-shadow: 0 6px 22px rgb(0 0 0 / 0.2);
+}
+
+.survey-cta__link--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgb(0 0 0 / 0.24);
+}
+
 .survey-cta__link:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
   opacity: 1;
+}
+
+.survey-cta__link--primary .survey-cta__arrow {
+  font-size: 1.25rem;
+  transition: transform 0.2s var(--ease);
+}
+
+.survey-cta__link--primary:hover .survey-cta__arrow {
+  transform: translateX(2px);
 }
 
 .survey-cta__arrow {
@@ -892,18 +933,6 @@ h3 {
 
 .survey-cta__link--disabled:hover {
   transform: none;
-  box-shadow: none;
-}
-
-.survey-cta__link--outline {
-  background: transparent;
-  color: #fff !important;
-  border: 2px solid rgb(255 255 255 / 0.85);
-  box-shadow: none;
-}
-
-.survey-cta__link--outline:hover {
-  background: rgb(255 255 255 / 0.12);
   box-shadow: none;
 }
 

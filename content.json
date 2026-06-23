@@ -27,11 +27,8 @@
         "items": [
           {
             "label": "Pre-workshop survey",
-            "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en"
-          },
-          {
-            "label": "EC-TEL 2026 registration",
-            "href": "https://ea-tel.eu/ectel2026/registration"
+            "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en",
+            "variant": "primary"
           }
         ]
       }
@@ -75,10 +72,6 @@
       "link": {
         "href": "https://survey.it-u.at/index.php?r=survey/index&sid=654412&lang=en",
         "label": "Complete the pre-workshop survey"
-      },
-      "registrationLink": {
-        "href": "https://ea-tel.eu/ectel2026/registration",
-        "label": "Register for EC-TEL 2026"
       }
     },
     "description": {
