@@ -328,29 +328,48 @@
       .join('');
   }
 
+  function renderAffiliationLogo(item) {
+    var inner =
+      '<img src="' +
+      escapeHtml(item.src) +
+      '" alt="' +
+      escapeHtml(item.name) +
+      '" loading="lazy" decoding="async">';
+    if (item.href) {
+      return (
+        '<a class="affiliation-logo" href="' +
+        escapeHtml(item.href) +
+        '" target="_blank" rel="noopener noreferrer" role="listitem">' +
+        inner +
+        '</a>'
+      );
+    }
+    return (
+      '<span class="affiliation-logo affiliation-logo-item" role="listitem">' +
+      inner +
+      '</span>'
+    );
+  }
+
   function fillAffiliations(affiliations) {
     var list = document.querySelector('[data-fill="organisers.affiliations"]');
-    if (!list || !affiliations) return;
-    list.innerHTML = affiliations
-      .map(function (item) {
-        var inner =
-          '<img src="' +
-          escapeHtml(item.src) +
-          '" alt="' +
-          escapeHtml(item.name) +
-          '" loading="lazy" decoding="async">';
-        if (item.href) {
-          return (
-            '<li><a href="' +
-            escapeHtml(item.href) +
-            '" target="_blank" rel="noopener noreferrer">' +
-            inner +
-            '</a></li>'
-          );
-        }
-        return '<li class="affiliation-logo-item">' + inner + '</li>';
-      })
-      .join('');
+    if (!list || !affiliations || !affiliations.length) return;
+
+    var firstRowCount = 4;
+    var row1 = affiliations.slice(0, firstRowCount);
+    var row2 = affiliations.slice(firstRowCount);
+
+    list.innerHTML =
+      '<div class="affiliation-logos-row" style="--row-logos: ' +
+      row1.length +
+      '">' +
+      row1.map(renderAffiliationLogo).join('') +
+      '</div>' +
+      '<div class="affiliation-logos-row" style="--row-logos: ' +
+      row2.length +
+      '">' +
+      row2.map(renderAffiliationLogo).join('') +
+      '</div>';
   }
 
   function fillNavigation(links) {
